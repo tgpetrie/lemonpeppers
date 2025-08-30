@@ -34455,3 +34455,13 @@
 2025-08-30 14:40:10,066 - INFO - Successfully processed data: 10 gainers, 15 losers, 10 banner items
 2025-08-30 14:40:10,067 - INFO - 3-min cache updated: 10 gainers, 15 losers, 10 banner items
 2025-08-30 14:40:12,476 - INFO - Successfully fetched 50 prices from Coinbase
+2025-08-30 14:41:10,107 - INFO - Successfully fetched 50 prices from Coinbase
+2025-08-30 14:41:12,363 - INFO - Successfully fetched Coinbase 24h top movers: 7 gainers, 3 losers
+2025-08-30 14:41:12,369 - INFO - Successfully processed data: 5 gainers, 15 losers, 10 banner items
+2025-08-30 14:41:12,370 - INFO - 3-min cache updated: 5 gainers, 15 losers, 10 banner items
+2025-08-30 14:41:14,828 - INFO - Successfully fetched 50 prices from Coinbase
+2025-08-30 14:41:14,864 - INFO - Successfully fetched 50 prices from Coinbase
+2025-08-30 14:41:17,103 - INFO - Successfully fetched Coinbase 24h top movers: 9 gainers, 1 losers
+2025-08-30 14:41:17,108 - INFO - Successfully processed data: 4 gainers, 15 losers, 10 banner items
+2025-08-30 14:41:17,109 - INFO - 3-min cache updated: 4 gainers, 15 losers, 10 banner items
+2025-08-30 14:41:19,870 - INFO - Successfully fetched 50 prices from Coinbase
