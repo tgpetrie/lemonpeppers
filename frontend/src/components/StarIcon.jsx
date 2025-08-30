@@ -1,9 +1,7 @@
+import React from 'react';
 
-import React, { useRef } from 'react';
-
-// Outlined purple star with gold/orange fill option
 export default function StarIcon({ filled, onClick, className = '' }) {
-  const svgRef = useRef(null);
+  const svgRef = React.useRef(null);
   // Animate scale on click
   const handleClick = (e) => {
     if (svgRef.current) {
