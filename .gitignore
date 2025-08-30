@@ -25,3 +25,61 @@ backend/watchlist_insights.log
 .history/
 .DS_Store
 *.log
+# ---- OS / Editor ----
+.DS_Store
+*.swp
+*.swo
+*.tmp
+*.log
+*.bak
+*.backup
+*.backup.*
+*.jsx.bak
+*.jsx.backup
+
+# VSCode / local settings
+.vscode/
+.history/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+ENV/
+
+# ---- Node / Frontend ----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp.*
+.pnp.js
+.cache/
+coverage/
+dist/
+out/
+.next/
+*.tsbuildinfo
+
+# ---- Logs ----
+*.log
+backend/backend/server.log
+
+# ---- Environment files ----
+.env
+.env.*
+!.env.example
+
+# ---- Misc ----
+archive_legacy.sh
+frontend/src/_archive/
