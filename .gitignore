@@ -18,3 +18,8 @@ backend/watchlist_insights.log
 
 # VS Code
 .vscode/
+
+# ignores added
+.DS_Store
+*.log
+.history/
