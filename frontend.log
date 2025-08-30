@@ -2,176 +2,56 @@
 > frontend@1.1.0 dev
 > vite
 
-4:51:33 PM [vite] (client) Re-optimizing dependencies because vite config has changed
-Port 5173 is in use, trying another one...
 
-  VITE v6.3.5  ready in 260 ms
+  VITE v5.4.19  ready in 98 ms
 
-  ➜  Local:   http://localhost:5174/
+  ➜  Local:   http://localhost:5173/
   ➜  Network: use --host to expose
-4:52:00 PM [vite] (client) Pre-transform error: Failed to load PostCSS config (searchPath: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend): [Error] Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
-Require stack:
-- /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs
-
-(@/Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs)
-Error: Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
-Require stack:
-- /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs
-
-(@/Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs)
-    at load (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11776:11)
-    at async Promise.all (index 1)
-    at async plugins (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11805:12)
-    at async processResult (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11876:14)
-  Plugin: vite:css
-  File: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/index.css
-4:52:00 PM [vite] Internal server error: Failed to load PostCSS config (searchPath: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend): [Error] Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
-Require stack:
-- /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs
-
-(@/Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs)
-Error: Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
-Require stack:
-- /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs
-
-(@/Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs)
-    at load (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11776:11)
-    at async Promise.all (index 1)
-    at async plugins (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11805:12)
-    at async processResult (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11876:14)
-  Plugin: vite:css
-  File: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/index.css
-4:53:34 PM [vite] Internal server error: Failed to load PostCSS config (searchPath: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend): [Error] Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
-Require stack:
-- /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs
-
-(@/Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs)
-Error: Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
-Require stack:
-- /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs
-
-(@/Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs)
-    at load (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11776:11)
-    at async Promise.all (index 1)
-    at async plugins (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11805:12)
-    at async processResult (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11876:14)
-  Plugin: vite:css
-  File: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/index.css
-4:58:17 PM [vite] (client) page reload src/main.jsx
-4:58:17 PM [vite] Pre-transform error: Failed to resolve import "./index.css" from "src/main.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/src/main.jsx:4:7
-  2  |  import ReactDOM from "react-dom/client";
-  3  |  import App from "./app.jsx";
-  4  |  import "./index.css";
-     |          ^
-  5  |  ReactDOM.createRoot(document.getElementById("root")).render(
-  6  |    /* @__PURE__ */ React.createElement(React.StrictMode, null, /* @__PURE__ */ React.createElement(App, null))
-4:58:17 PM [vite] Pre-transform error: Failed to resolve import "./index.css" from "src/main.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/src/main.jsx:4:7
-  2  |  import ReactDOM from "react-dom/client";
-  3  |  import App from "./app.jsx";
-  4  |  import "./index.css";
-     |          ^
-  5  |  ReactDOM.createRoot(document.getElementById("root")).render(
-  6  |    /* @__PURE__ */ React.createElement(React.StrictMode, null, /* @__PURE__ */ React.createElement(App, null))
-4:58:17 PM [vite] Internal server error: Failed to resolve import "./index.css" from "src/main.jsx". Does the file exist?
-  Plugin: vite:import-analysis
-  File: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/src/main.jsx:4:7
-  2  |  import ReactDOM from "react-dom/client";
-  3  |  import App from "./app.jsx";
-  4  |  import "./index.css";
-     |          ^
-  5  |  ReactDOM.createRoot(document.getElementById("root")).render(
-  6  |    /* @__PURE__ */ React.createElement(React.StrictMode, null, /* @__PURE__ */ React.createElement(App, null))
-      at TransformPluginContext._formatLog (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:42499:41)
-      at TransformPluginContext.error (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:42496:16)
-      at normalizeUrl (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:40475:23)
-      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-      at async file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:40594:37
-      at async Promise.all (index 3)
-      at async TransformPluginContext.transform (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:40521:7)
-      at async EnvironmentPluginContainer.transform (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:42294:18)
-      at async loadAndTransform (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:35735:27)
-      at async viteTransformMiddleware (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:37250:24)
-4:58:54 PM [vite] (client) Pre-transform error: Failed to load PostCSS config (searchPath: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend): [Error] Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
-Require stack:
-- /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs
-
-(@/Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs)
-Error: Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
-Require stack:
-- /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs
-
-(@/Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs)
-    at load (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11776:11)
-    at async Promise.all (index 1)
-    at async plugins (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11805:12)
-    at async processResult (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11876:14)
-  Plugin: vite:css
-  File: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/index.css
-4:59:37 PM [vite] Internal server error: Failed to load PostCSS config (searchPath: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend): [Error] Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
-Require stack:
-- /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs
-
-(@/Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs)
-Error: Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
-Require stack:
-- /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs
-
-(@/Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs)
-    at load (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11776:11)
-    at async Promise.all (index 1)
-    at async plugins (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11805:12)
-    at async processResult (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11876:14)
-  Plugin: vite:css
-  File: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/index.css
-5:07:07 PM [vite] Internal server error: Failed to load PostCSS config (searchPath: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend): [Error] Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
-Require stack:
-- /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs
-
-(@/Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs)
-Error: Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
-Require stack:
-- /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs
-
-(@/Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs)
-    at load (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11776:11)
-    at async Promise.all (index 1)
-    at async plugins (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11805:12)
-    at async processResult (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11876:14)
-  Plugin: vite:css
-  File: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/index.css
-5:07:11 PM [vite] Internal server error: Failed to load PostCSS config (searchPath: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend): [Error] Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
-Require stack:
-- /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs
-
-(@/Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs)
-Error: Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
-Require stack:
-- /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs
-
-(@/Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs)
-    at load (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11776:11)
-    at async Promise.all (index 1)
-    at async plugins (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11805:12)
-    at async processResult (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11876:14)
-  Plugin: vite:css
-  File: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/index.css
-5:08:25 PM [vite] Internal server error: Failed to load PostCSS config (searchPath: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend): [Error] Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
-Require stack:
-- /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs
-
-(@/Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs)
-Error: Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
-Require stack:
-- /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs
-
-(@/Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/postcss.config.cjs)
-    at load (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11776:11)
-    at async Promise.all (index 1)
-    at async plugins (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11805:12)
-    at async processResult (file:///opt/homebrew/lib/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:11876:14)
-  Plugin: vite:css
-  File: /Users/cdmxx/moonwalking-lemon-pepper-steppers/frontend/index.css
+Files in the public directory are served at the root path.
+Instead of /public/styles.css, use /styles.css.
+10:19:31 PM [vite] page reload src/components/GainersTable.jsx
+10:19:33 PM [vite] page reload src/components/GainersTable.jsx
+Files in the public directory are served at the root path.
+Instead of /public/styles.css, use /styles.css.
+10:19:35 PM [vite] page reload src/components/LosersTable.jsx
+Files in the public directory are served at the root path.
+Instead of /public/styles.css, use /styles.css.
+10:19:37 PM [vite] page reload src/components/LosersTable.jsx
+Files in the public directory are served at the root path.
+Instead of /public/styles.css, use /styles.css.
+10:19:51 PM [vite] page reload src/context/websocketcontext.jsx
+Files in the public directory are served at the root path.
+Instead of /public/styles.css, use /styles.css.
+10:19:54 PM [vite] page reload src/context/websocketcontext.jsx
+10:19:54 PM [vite] page reload src/context/websocketcontext.jsx
+Files in the public directory are served at the root path.
+Instead of /public/styles.css, use /styles.css.
+10:19:55 PM [vite] page reload src/context/websocketcontext.jsx
+Files in the public directory are served at the root path.
+Instead of /public/styles.css, use /styles.css.
+10:19:57 PM [vite] page reload src/context/websocketcontext.jsx
+Files in the public directory are served at the root path.
+Instead of /public/styles.css, use /styles.css.
+4:57:36 AM [vite] page reload src/components/LosersTable.jsx
+Files in the public directory are served at the root path.
+Instead of /public/styles.css, use /styles.css.
+4:57:39 AM [vite] page reload src/app.jsx
+Files in the public directory are served at the root path.
+Instead of /public/styles.css, use /styles.css.
+4:57:41 AM [vite] page reload src/main.jsx
+Files in the public directory are served at the root path.
+Instead of /public/styles.css, use /styles.css.
+4:57:43 AM [vite] page reload src/context/websocketcontext.jsx
+4:57:44 AM [vite] page reload src/context/websocketcontext.jsx
+Files in the public directory are served at the root path.
+Instead of /public/styles.css, use /styles.css.
+4:57:49 AM [vite] page reload src/components/GainersTable.jsx
+Files in the public directory are served at the root path.
+Instead of /public/styles.css, use /styles.css.
+1:02:10 PM [vite] page reload src/app.jsx
+Files in the public directory are served at the root path.
+Instead of /public/styles.css, use /styles.css.
+1:02:44 PM [vite] ✨ new dependencies optimized: prop-types
+1:02:44 PM [vite] ✨ optimized dependencies changed. reloading
+Files in the public directory are served at the root path.
+Instead of /public/styles.css, use /styles.css.

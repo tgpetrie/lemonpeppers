@@ -1,11 +1,3 @@
-/**
- * DEPRECATED BACKUP COMPONENT
- * -------------------------------------------------------------
- * This file is kept only as a reference backup while we migrate
- * to the new Watchlist implementation. Do NOT import this file
- * anywhere in the app. If imported accidentally, it will throw
- * a clear error in development to prevent accidental usage.
- */
 import React, { useState, useEffect } from 'react';
 import { API_ENDPOINTS, fetchData } from '../api';
 import { getWatchlist, addToWatchlist, removeFromWatchlist } from '../api';
@@ -15,7 +7,7 @@ const COIN_LIST = [
   'BTC', 'ETH', 'SOL', 'ADA', 'XRP', 'DOGE', 'LTC', 'AVAX', 'DOT', 'ATOM', 'NEAR', 'PEPE', 'SHIB', 'FLOKI', 'BONK', 'WIF', 'SEI', 'BNB', 'LINK', 'MATIC', 'ARB', 'OP', 'TIA', 'RNDR', 'UNI', 'AAVE', 'SUI', 'JUP', 'PYTH', 'USDT', 'USDC', 'WBTC', 'TRX', 'BCH', 'ETC', 'FIL', 'STX', 'IMX', 'MKR', 'GRT', 'LDO', 'INJ', 'RUNE', 'DYDX', 'CAKE', 'SAND', 'AXS', 'MANA', 'APE', 'GMT', 'ENS', '1INCH', 'COMP', 'CRV', 'SNX', 'YFI', 'ZRX', 'BAT', 'KNC', 'BAL', 'CVX', 'SUSHI', 'UMA', 'BNT', 'REN', 'SRM', 'ALGO', 'CRO', 'FTM', 'KAVA', 'MINA', 'XLM', 'VET', 'HBAR', 'QNT', 'EGLD', 'XTZ', 'CHZ', 'GALA', 'FLOW', 'ENJ', 'ANKR', 'CELO', 'CKB', 'DASH', 'RVN', 'ZIL', 'ICX', 'ONT', 'QTUM', 'SC', 'WAVES', 'XEM', 'ZEN', 'ZEC', 'LSK', 'STEEM', 'BTS', 'ARDR', 'STRAX', 'SYS', 'NXT', 'FCT', 'DCR', 'GAME', 'BLOCK', 'NAV', 'VTC', 'PIVX', 'XVG', 'EXP', 'NXS', 'NEO', 'GAS', 'DGB', 'BTG', 'XMR'
 ];
 
-const WatchlistBackup = ({ onWatchlistChange, topWatchlist, quickview }) => {
+const Watchlist = ({ onWatchlistChange, topWatchlist, quickview }) => {
   const [showAll, setShowAll] = useState(false);
   const [search, setSearch] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -129,7 +121,7 @@ const WatchlistBackup = ({ onWatchlistChange, topWatchlist, quickview }) => {
 
   if (loading) return (
     <div className="text-center py-8">
-      <div className="animate-pulse text-orange-400 font-raleway tabular-nums">Loading Watchlist...</div>
+      <div className="animate-pulse text-orange-400 font-mono">Loading Watchlist...</div>
     </div>
   );
 
@@ -189,11 +181,11 @@ const WatchlistBackup = ({ onWatchlistChange, topWatchlist, quickview }) => {
                       }
                       style={{ boxShadow: '0 2px 16px 0 rgba(255,193,7,0.08)' }}
                     >
-                      <span className="font-raleway tabular-nums text-lg text-white truncate">{symbol}</span>
-                      <span className="ml-4 text-teal-300 font-raleway tabular-nums text-base">{price}</span>
-                      <span className="ml-4 text-teal-300 font-raleway tabular-nums text-base">{prevPrice}</span>
+                      <span className="font-mono text-lg text-white truncate">{symbol}</span>
+                      <span className="ml-4 text-teal-300 font-mono text-base">{price}</span>
+                      <span className="ml-4 text-teal-300 font-mono text-base">{prevPrice}</span>
                       <div className="flex flex-col items-center ml-4">
-                        <span className={`font-raleway tabular-nums text-base ${changeColor}`}>{change}</span>
+                        <span className={`font-mono text-base ${changeColor}`}>{change}</span>
                         <span className="text-xs text-gray-400">1min</span>
                       </div>
                       <button
@@ -280,7 +272,7 @@ function WatchlistRow({ symbol, onRemove, removedBadge, popStar }) {
         }
         style={{ boxShadow: '0 2px 16px 0 rgba(255,193,7,0.08)' }}
       >
-        <span className="font-raleway tabular-nums text-lg text-white truncate">{symbol}</span>
+        <span className="font-mono text-lg text-white truncate">{symbol}</span>
         <button
           onClick={handleExpand}
           className="ml-2 px-2 py-1 rounded bg-blue-900 text-blue-200 hover:bg-blue-700 text-xs font-bold transition-colors"
@@ -302,8 +294,8 @@ function WatchlistRow({ symbol, onRemove, removedBadge, popStar }) {
             <span className="text-red-400">{error}</span>
           ) : data ? (
             <>
-              <span>Price: <span className="font-raleway tabular-nums">${typeof data.price === 'number' ? (data.price < 1 && data.price > 0 ? data.price.toFixed(4) : data.price.toFixed(2)) : 'N/A'}</span></span>
-              <span>1-min Change: <span className={(data.change > 0 ? 'text-blue-400' : 'text-pink-400') + ' font-raleway tabular-nums'}>{typeof data.change === 'number' ? `${data.change.toFixed(2)}%` : 'N/A'}</span></span>
+              <span>Price: <span className="font-mono">${typeof data.price === 'number' ? (data.price < 1 && data.price > 0 ? data.price.toFixed(4) : data.price.toFixed(2)) : 'N/A'}</span></span>
+              <span>1-min Change: <span className={data.change > 0 ? 'text-blue-400' : 'text-pink-400'}>{typeof data.change === 'number' ? `${data.change.toFixed(2)}%` : 'N/A'}</span></span>
             </>
           ) : (
             <span className="text-gray-400">No data</span>
@@ -314,15 +306,4 @@ function WatchlistRow({ symbol, onRemove, removedBadge, popStar }) {
   );
 }
 
-// Export the backup under a different name so it cannot conflict
-// with the real Watchlist. Intentionally throw if someone tries
-// to render it by mistake in development.
-export default function Watchlist() {
-  if (process && process.env && process.env.NODE_ENV !== 'production') {
-    throw new Error('Watchlist.backup.jsx is deprecated. Use the new Watchlist component.');
-  }
-  return null;
-}
-
-// Also export the backup explicitly if needed for manual inspection
-export { WatchlistBackup };
+export default Watchlist;
