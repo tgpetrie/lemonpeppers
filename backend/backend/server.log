@@ -34281,3 +34281,24 @@
 2025-08-30 14:21:09,558 - INFO - Successfully processed data: 5 gainers, 15 losers, 10 banner items
 2025-08-30 14:21:09,558 - INFO - 3-min cache updated: 5 gainers, 15 losers, 10 banner items
 2025-08-30 14:21:11,893 - INFO - Successfully fetched 50 prices from Coinbase
+2025-08-30 14:22:09,956 - INFO - Successfully fetched 50 prices from Coinbase
+2025-08-30 14:22:12,389 - INFO - Successfully fetched Coinbase 24h top movers: 10 gainers, 3 losers
+2025-08-30 14:22:12,392 - INFO - Successfully processed data: 15 gainers, 15 losers, 13 banner items
+2025-08-30 14:22:12,392 - INFO - 3-min cache updated: 15 gainers, 15 losers, 13 banner items
+2025-08-30 14:22:14,335 - INFO - Successfully fetched 50 prices from Coinbase
+2025-08-30 14:22:14,463 - INFO - Successfully fetched 50 prices from Coinbase
+2025-08-30 14:22:16,025 - INFO - Successfully fetched Coinbase 24h top movers: 10 gainers, 3 losers
+2025-08-30 14:22:16,028 - INFO - Successfully processed data: 15 gainers, 15 losers, 13 banner items
+2025-08-30 14:22:16,028 - INFO - 3-min cache updated: 15 gainers, 15 losers, 13 banner items
+2025-08-30 14:22:18,510 - INFO - Successfully fetched 50 prices from Coinbase
+2025-08-30 14:23:16,925 - INFO - Successfully fetched 50 prices from Coinbase
+2025-08-30 14:23:19,371 - INFO - Successfully fetched Coinbase 24h top movers: 10 gainers, 1 losers
+2025-08-30 14:23:19,372 - INFO - Successfully processed data: 15 gainers, 7 losers, 11 banner items
+2025-08-30 14:23:19,372 - INFO - 3-min cache updated: 15 gainers, 7 losers, 11 banner items
+2025-08-30 14:23:20,771 - INFO - Successfully fetched 50 prices from Coinbase
+2025-08-30 14:23:21,906 - INFO - Successfully fetched 50 prices from Coinbase
+2025-08-30 14:23:23,269 - INFO - Successfully fetched Coinbase 24h top movers: 7 gainers, 2 losers
+2025-08-30 14:23:23,272 - INFO - Successfully processed data: 15 gainers, 8 losers, 9 banner items
+2025-08-30 14:23:23,272 - INFO - 3-min cache updated: 15 gainers, 8 losers, 9 banner items
+2025-08-30 14:23:25,755 - INFO - Successfully fetched 50 prices from Coinbase
+2025-08-30 14:24:24,480 - INFO - Successfully fetched 50 prices from Coinbase
