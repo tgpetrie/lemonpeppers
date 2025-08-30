@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './app.jsx';
 import { WebSocketProvider } from './context/websocketcontext.jsx';
 import '../public/styles.css';
+import { smokeCheckWsUrl } from './lib/makeWsUrl.smoke';
 
 // Responsive best practices: index.css already includes Tailwind and responsive settings.
 // No changes needed here, but ensure root element is used for hydration.

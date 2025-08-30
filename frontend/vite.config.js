@@ -19,6 +19,11 @@ export default ({ mode }) => {
           target: VITE_API_URL,
           changeOrigin: true,
         },
+        '/ws': {
+          target: VITE_API_URL,
+          changeOrigin: true,
+          ws: true,
+        },
       },
     },
     preview: {
