@@ -1,38 +1,28 @@
 
 
-// API configuration for BHABIT CB4 with dynamic base URL and fallback
-// Prefer relative `/api` so Vite dev-proxy handles it; fall back to explicit VITE_API_URL or localhost:5004
-const RAW_ENV_BASE = import.meta.env.VITE_API_URL;
-let API_BASE_URL = '/api';
-if (!RAW_ENV_BASE) {
-  // No explicit override: use relative proxy route
-  API_BASE_URL = '/api';
-} else if (RAW_ENV_BASE === 'relative') {
-  API_BASE_URL = '/api';
-} else if (/^\s*\/api(\/|$)/.test(RAW_ENV_BASE)) {
-  API_BASE_URL = '/api';
-} else {
-  API_BASE_URL = RAW_ENV_BASE || 'http://localhost:5004';
-}
-API_BASE_URL = (API_BASE_URL || '').replace(/\/$/, '');
+import { API_ORIGIN, apiUrl } from './api/config';
+
+// Build a canonical API base that is either an absolute origin + /api or a relative /api path
+const API_BASE = API_ORIGIN ? `${API_ORIGIN}/api`.replace(/\/+$/, '') : '/api';
+
 const buildEndpoints = () => ({
-  topBanner: `${API_BASE_URL}/api/component/top-banner-scroll`,
-  bottomBanner: `${API_BASE_URL}/api/component/bottom-banner-scroll`,
-  gainersTable: `${API_BASE_URL}/api/component/gainers-table`,
-  gainersTable1Min: `${API_BASE_URL}/api/component/gainers-table-1min`,
-  losersTable: `${API_BASE_URL}/api/component/losers-table`,
-  alertsRecent: `${API_BASE_URL}/api/alerts/recent`,
-  topMoversBar: `${API_BASE_URL}/api/component/top-movers-bar`,
-  crypto: `${API_BASE_URL}/api/crypto`,
-  health: `${API_BASE_URL}/api/health`,
-  serverInfo: `${API_BASE_URL}/api/server-info`,
-  marketOverview: `${API_BASE_URL}/api/market-overview`,
-  watchlistInsights: `${API_BASE_URL}/api/watchlist/insights`,
-  watchlistInsightsLog: `${API_BASE_URL}/api/watchlist/insights/log`,
-  watchlistInsightsPrice: `${API_BASE_URL}/api/watchlist/insights/price`,
-  technicalAnalysis: (symbol) => `${API_BASE_URL}/api/technical-analysis/${symbol}`,
-  cryptoNews: (symbol) => `${API_BASE_URL}/api/news/${symbol}`,
-  socialSentiment: (symbol) => `${API_BASE_URL}/api/social-sentiment/${symbol}`
+  topBanner: `${API_BASE}/component/top-banner-scroll`,
+  bottomBanner: `${API_BASE}/component/bottom-banner-scroll`,
+  gainersTable: `${API_BASE}/component/gainers-table`,
+  gainersTable1Min: `${API_BASE}/component/gainers-table-1min`,
+  losersTable: `${API_BASE}/component/losers-table`,
+  alertsRecent: `${API_BASE}/alerts/recent`,
+  topMoversBar: `${API_BASE}/component/top-movers-bar`,
+  crypto: `${API_BASE}/crypto`,
+  health: `${API_BASE}/health`,
+  serverInfo: `${API_BASE}/server-info`,
+  marketOverview: `${API_BASE}/market-overview`,
+  watchlistInsights: `${API_BASE}/watchlist/insights`,
+  watchlistInsightsLog: `${API_BASE}/watchlist/insights/log`,
+  watchlistInsightsPrice: `${API_BASE}/watchlist/insights/price`,
+  technicalAnalysis: (symbol) => `${API_BASE}/technical-analysis/${symbol}`,
+  cryptoNews: (symbol) => `${API_BASE}/news/${symbol}`,
+  socialSentiment: (symbol) => `${API_BASE}/social-sentiment/${symbol}`
 });
 
 export let API_ENDPOINTS = buildEndpoints();
@@ -47,7 +37,7 @@ export const setApiBaseUrl = (url) => {
 export async function fetchLatestAlerts(symbols = []) {
   if (!Array.isArray(symbols) || symbols.length === 0) return {};
   try {
-    const res = await fetch(`${API_BASE_URL}/api/watchlist/insights/latest`, {
+  const res = await fetch(`${API_BASE}/watchlist/insights/latest`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ symbols })
