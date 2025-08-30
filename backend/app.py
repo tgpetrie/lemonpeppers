@@ -2211,14 +2211,19 @@ if __name__ == '__main__':
     
     logging.info("Background update thread started")
     logging.info(f"Server starting on http://{CONFIG['HOST']}:{CONFIG['PORT']}")
-    
+
     try:
-        app.run(debug=CONFIG['DEBUG'], 
-                host=CONFIG['HOST'], 
-                port=CONFIG['PORT'])
+        # Prefer PORT, then BACKEND_PORT, else default 5004
+        port = int(os.getenv("PORT", os.getenv("BACKEND_PORT", "5004")))
+        # Bind all addresses so you can hit it from other devices if needed
+        host = "0.0.0.0"
+        # Enable debug for development by default here (can be overridden by env)
+        debug = True if os.getenv('FLASK_DEBUG', '').lower() in {'1','true'} else CONFIG.get('DEBUG', True)
+
+        app.run(host=host, port=port, debug=debug)
     except OSError as e:
         if "Address already in use" in str(e):
-            logging.error(f"Port {CONFIG['PORT']} is in use. Try:")
+            logging.error(f"Port {port} is in use. Try:")
             logging.error("1. python3 app.py --kill-port")
             logging.error("2. python3 app.py --auto-port")
             logging.error("3. python3 app.py --port 5002")

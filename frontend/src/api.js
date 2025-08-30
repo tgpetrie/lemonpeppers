@@ -1,20 +1,20 @@
 
 
 // API configuration for BHABIT CB4 with dynamic base URL and fallback
-// Support special value 'relative' to use same-origin relative /api requests (works with Vercel rewrites)
+// Prefer relative `/api` so Vite dev-proxy handles it; fall back to explicit VITE_API_URL or localhost:5004
 const RAW_ENV_BASE = import.meta.env.VITE_API_URL;
-let API_BASE_URL;
-if (RAW_ENV_BASE && RAW_ENV_BASE !== 'relative' && !/^\s*\/api(\/|$)/.test(RAW_ENV_BASE)) {
-  API_BASE_URL = RAW_ENV_BASE.trim();
+let API_BASE_URL = '/api';
+if (!RAW_ENV_BASE) {
+  // No explicit override: use relative proxy route
+  API_BASE_URL = '/api';
 } else if (RAW_ENV_BASE === 'relative') {
-  API_BASE_URL = ''; // same-origin relative mode
-} else if (/^\s*\/api(\/|$)/.test(RAW_ENV_BASE || '')) {
-  // If VITE_API_URL is '/api' or '/api/...', treat as same-origin relative
-  API_BASE_URL = '';
+  API_BASE_URL = '/api';
+} else if (/^\s*\/api(\/|$)/.test(RAW_ENV_BASE)) {
+  API_BASE_URL = '/api';
 } else {
-  API_BASE_URL = 'http://localhost:5001'; // dev fallback
+  API_BASE_URL = RAW_ENV_BASE || 'http://localhost:5004';
 }
-API_BASE_URL = API_BASE_URL.replace(/\/$/, '');
+API_BASE_URL = (API_BASE_URL || '').replace(/\/$/, '');
 const buildEndpoints = () => ({
   topBanner: `${API_BASE_URL}/api/component/top-banner-scroll`,
   bottomBanner: `${API_BASE_URL}/api/component/bottom-banner-scroll`,
