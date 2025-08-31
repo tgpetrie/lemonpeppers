@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { API_ENDPOINTS, fetchData } from '../api.js';
+import { API_ENDPOINTS, fetchData } from './api.js';
 
 // BottomBannerScroll: a simple, always-render banner just like TopBannerScroll
 // but pulling from API_ENDPOINTS.bottomBanner and with a different title.

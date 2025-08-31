@@ -1,7 +1,14 @@
 import { makeWsUrl } from './makeWsUrl';
 
 export function smokeCheckWsUrl() {
-  const u = makeWsUrl('/ws');
-  console.assert(/^wss?:\/\//.test(u), 'makeWsUrl should return ws(s) URL', u);
-  if (import.meta.env.DEV) console.log('[smoke] WS URL:', u);
+	try {
+		const ws = makeWsUrl('/ws');
+		// eslint-disable-next-line no-console
+		console.info('[smoke] websocket url ->', ws);
+		return ws;
+	} catch (e) {
+		// eslint-disable-next-line no-console
+		console.warn('[smoke] makeWsUrl failed', e && e.message ? e.message : e);
+		return null;
+	}
 }

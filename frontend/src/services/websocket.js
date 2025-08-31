@@ -9,8 +9,10 @@ class WebSocketManager {
     this.reconnectAttempts = 0;
     this.maxReconnectAttempts = 5;
   // Prefer explicit VITE_WS_URL, else derive from current origin via makeWsUrl
-  const explicitWs = import.meta.env?.VITE_WS_URL || '';
-  this.baseUrl = explicitWs ? String(explicitWs).replace(/\/+$/, '') : makeWsUrl('/socket.io');
+    const explicitWs = import.meta.env?.VITE_WS_URL || '';
+    // Use the canonical /ws path (server configured with path='ws') unless
+    // overridden by VITE_WS_URL.
+    this.baseUrl = explicitWs ? String(explicitWs).replace(/\/+$/, '') : makeWsUrl('/ws');
     // Allow opting out by default unless explicitly enabled server-side
     this.disabled = String(import.meta.env?.VITE_DISABLE_WS || 'true').toLowerCase() === 'true';
   }

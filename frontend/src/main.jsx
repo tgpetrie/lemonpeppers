@@ -14,3 +14,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </WebSocketProvider>
   </React.StrictMode>
 );
+
+// Run a small smoke check for the WS URL in the browser only. Don't let it break app startup.
+if (typeof window !== 'undefined') {
+  try {
+    smokeCheckWsUrl();
+  } catch (e) {
+    // swallow in dev, console for visibility
+    // eslint-disable-next-line no-console
+    console.warn('smokeCheckWsUrl failed:', e && e.message ? e.message : e);
+  }
+}

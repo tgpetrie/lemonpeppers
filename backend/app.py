@@ -5,6 +5,8 @@ import subprocess
 import sys
 from flask import Flask, jsonify, request, g
 from flask_cors import CORS
+# Socket.IO server (Engine.IO) for realtime features
+from flask_socketio import SocketIO
 import requests
 import time
 import threading
@@ -119,6 +121,25 @@ CORS(app, origins=cors_origins)
 
 # Register blueprints after final app creation
 app.register_blueprint(watchlist_bp)
+
+# Initialize Flask-SocketIO with the same CORS origins and expose the
+# Engine.IO endpoint under the resource name 'ws' so the client can use
+# a canonical `/ws` path (Vite proxies `/ws` and will handle upgrades).
+try:
+    socketio = SocketIO(app, cors_allowed_origins=cors_origins, path='ws')
+
+    @socketio.on('connect')
+    def _on_connect():
+        logging.info(f"SocketIO client connected: {request.remote_addr if request else 'unknown'}")
+
+    @socketio.on('disconnect')
+    def _on_disconnect():
+        logging.info("SocketIO client disconnected")
+except Exception as e:
+    # If SocketIO cannot be initialized for any reason, continue running
+    # the Flask app (realtime will be disabled).
+    logging.warning(f"Flask-SocketIO not initialized: {e}")
+    socketio = None
 
 # ---------------- Health + Metrics -----------------
 _ERROR_STATS = { '5xx': 0 }
@@ -2220,7 +2241,12 @@ if __name__ == '__main__':
         # Enable debug for development by default here (can be overridden by env)
         debug = True if os.getenv('FLASK_DEBUG', '').lower() in {'1','true'} else CONFIG.get('DEBUG', True)
 
-        app.run(host=host, port=port, debug=debug)
+        # If we initialized SocketIO, prefer its run() method so Engine.IO
+        # endpoints are served. Otherwise fall back to Flask's app.run.
+        if socketio:
+            socketio.run(app, host=host, port=port, debug=debug)
+        else:
+            app.run(host=host, port=port, debug=debug)
     except OSError as e:
         if "Address already in use" in str(e):
             logging.error(f"Port {port} is in use. Try:")
