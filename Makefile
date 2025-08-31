@@ -21,6 +21,10 @@ start-frontend:
 dev: start-backend start-frontend
 	@echo "dev tasks started"
 
+.PHONY: restart-dev
+restart-dev:
+	@./scripts/dev_restart.sh
+
 stop:
 	@echo "stopping dev servers (if present)"; \
 	if [ -f /tmp/vite.pid ]; then kill $$(cat /tmp/vite.pid) 2>/dev/null || true; rm -f /tmp/vite.pid; fi; \
